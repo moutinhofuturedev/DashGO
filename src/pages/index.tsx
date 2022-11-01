@@ -20,15 +20,15 @@ export default function SignIn() {
         flexDirection={"column"}
         gap={"1rem"} // 16px
       >
-        <Input 
-          name={"email"} 
-          type={"email"} 
-          label={"E-mail"} 
+        <Input
+          name={"email"}
+          type={"email"}
+          label={"E-mail"}
         />
-        <Input 
-          name={"password"} 
-          type={"password"} 
-          label={"Senha"} 
+        <Input
+          name={"password"}
+          type={"password"}
+          label={"Senha"}
         />
 
         <Button
