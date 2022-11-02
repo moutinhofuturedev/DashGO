@@ -56,6 +56,13 @@ export default function SignIn() {
           Entrar
         </Button>
       </Flex>
+      <Text
+        as={"footer"}
+        position={"absolute"}
+        bottom={"1.5rem"}
+      >
+        Feito por Paulo Moutinho, 2022.
+      </Text>
     </Flex>
   );
 }
