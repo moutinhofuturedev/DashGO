@@ -18,11 +18,7 @@ export default function SignIn() {
         letterSpacing={"tight"}
       >
         dashgo
-        <Text
-          as={"span"}
-          color={"teal.400"}
-          ml={"0.25rem"}
-        >
+        <Text as={"span"} color={"teal.400"} ml={"0.25rem"}>
           .
         </Text>
       </Text>
@@ -36,8 +32,20 @@ export default function SignIn() {
         flexDirection={"column"}
         gap={"1rem"} // 16px
       >
-        <Input name={"email"} type={"email"} label={"E-mail"} placeholder="Digite seu e-mail"/>
-        <Input name={"password"} type={"password"} label={"Senha"} placeholder="Digite sua senha"/>
+        <Input
+          name={"email"}
+          type={"email"}
+          label={"E-mail"}
+          placeholder="Digite seu e-mail"
+          _placeholder={{ color: "gray.400" }}
+        />
+        <Input
+          name={"password"}
+          type={"password"}
+          label={"Senha"}
+          placeholder="Digite sua senha"
+          _placeholder={{ color: "gray.400" }}
+        />
 
         <Button
           type={"submit"}
