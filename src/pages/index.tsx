@@ -1,4 +1,4 @@
-import { Button, Flex } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import { Input } from "../components/Form";
 
 export default function SignIn() {
@@ -10,6 +10,22 @@ export default function SignIn() {
       w={"100vw"}
       px={"2rem"} // responsividade
     >
+      <Text
+        position={"absolute"}
+        top={"2rem"}
+        fontSize={"3xl"}
+        fontWeight={"bold"}
+        letterSpacing={"tight"}
+      >
+        dashgo
+        <Text
+          as={"span"}
+          color={"teal.400"}
+          ml={"0.25rem"}
+        >
+          .
+        </Text>
+      </Text>
       <Flex
         as={"form"}
         w={"100%"}
@@ -20,16 +36,8 @@ export default function SignIn() {
         flexDirection={"column"}
         gap={"1rem"} // 16px
       >
-        <Input
-          name={"email"}
-          type={"email"}
-          label={"E-mail"}
-        />
-        <Input
-          name={"password"}
-          type={"password"}
-          label={"Senha"}
-        />
+        <Input name={"email"} type={"email"} label={"E-mail"} placeholder="Digite seu e-mail"/>
+        <Input name={"password"} type={"password"} label={"Senha"} placeholder="Digite sua senha"/>
 
         <Button
           type={"submit"}
