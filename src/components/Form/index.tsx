@@ -1,9 +1,9 @@
 import { FormControl, FormLabel, Input as ChakraInput, InputProps as ChakraInputProps } from "@chakra-ui/react";
 
 type InputProps = {
-    name: string
-    label?: string
-} 
+  name: string
+  label?: string
+}
 
 type TotalProps = InputProps & ChakraInputProps // intersecção de tipos
 
