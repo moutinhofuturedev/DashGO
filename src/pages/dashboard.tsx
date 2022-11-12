@@ -1,6 +1,6 @@
 import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react"
 import { Header } from "../components/Header/index"
-import { Sidebar } from "../components/Sidebar"
+import { Sidebar } from "../components/Sidebar/index"
 import dynamic from "next/dynamic"
 import { series, options } from "../utils/configs"
 

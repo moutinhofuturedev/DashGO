@@ -2,7 +2,7 @@ import { Box, Button, Divider, Flex, Heading, HStack, SimpleGrid, VStack } from 
 import { Input } from "../../components/Form";
 
 import { Header } from "../../components/Header/index";
-import { Sidebar } from '../../components/Sidebar';
+import { Sidebar } from '../../components/Sidebar/index';
 
 export default function CreateUser() {
 
