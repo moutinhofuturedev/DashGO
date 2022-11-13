@@ -15,6 +15,8 @@ export function Input({ name, label, ...rest }: TotalProps) {
             type={"email"}
             name={name}
             id={name}
+            required
+            autoComplete="none"
             focusBorderColor="teal.400"
             bg={"gray.900"}
             variant={"filled"}
