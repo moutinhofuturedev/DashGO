@@ -13,6 +13,7 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header/index";
 import { Pagination } from "../../components/Pagination/index";
@@ -21,6 +22,11 @@ import { Sidebar } from "../../components/Sidebar/index";
 export default function UserList() {
   return (
     <Box>
+      <Head>
+        <title>dashGo | Listagem</title>
+        <meta name='description' content='DashGo' />
+        <link rel="icon" type="image/svg+xml" href="../../public/dash.svg"></link>
+      </Head>
       <Header />
       <Flex
         w={"100%"}

@@ -3,6 +3,7 @@ import { Header } from "../components/Header/index"
 import { Sidebar } from "../components/Sidebar/index"
 import dynamic from "next/dynamic"
 import { series, options } from "../utils/configs"
+import Head from "next/head"
 
 const Chart = dynamic(() => import("react-apexcharts"), {
     ssr: false // Server Sider Rendering está desligado
@@ -11,6 +12,11 @@ const Chart = dynamic(() => import("react-apexcharts"), {
 export default function Dashboard() {
     return (
       <Flex h={"100vh"} flexDirection={"column"}>
+        <Head>
+        <title>dashGo | Dashboard</title>
+        <meta name='description' content='DashGo' />
+        <link rel="icon" type="image/svg+xml" href="../../public/dash.svg"></link>
+      </Head>
         <Header />
         <Flex
           w={"100%"}

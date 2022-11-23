@@ -1,4 +1,5 @@
 import { Box, Button, Divider, Flex, Heading, HStack, SimpleGrid, VStack } from "@chakra-ui/react";
+import Head from "next/head";
 import { Input } from "../../components/Form";
 
 import { Header } from "../../components/Header/index";
@@ -8,6 +9,11 @@ export default function CreateUser() {
 
   return (
     <Box>
+      <Head>
+        <title>dashGo | Criar Usuário</title>
+        <meta name='description' content='DashGo' />
+        <link rel="icon" type="image/svg+xml" href="../../public/dash.svg"></link>
+      </Head>
       <Header />
       <Flex
         w={"100%"}

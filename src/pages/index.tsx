@@ -1,4 +1,5 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
+import Head from "next/head";
 import { Input } from "../components/Form";
 
 export default function SignIn() {
@@ -10,6 +11,11 @@ export default function SignIn() {
       w={"100vw"}
       px={"2rem"} // responsividade
     >
+      <Head>
+        <title>dashGo | Login</title>
+        <meta name='description' content='DashGo' />
+        <link rel="icon" type="image/svg+xml" href="../../public/dash.svg"></link>
+      </Head>
       <Text
         position={"absolute"}
         top={"2rem"}
@@ -25,12 +31,12 @@ export default function SignIn() {
       <Flex
         as={"form"}
         w={"100%"}
-        maxWidth={"23rem"} // 360px
+        maxWidth={["18rem", "23rem"]} 
         bg={"gray.800"}
-        p={"2rem"} // 32px
-        borderRadius={"0.5rem"} //8px
+        p={"2rem"} 
+        borderRadius={"0.5rem"} 
         flexDirection={"column"}
-        gap={"1rem"} // 16px
+        gap={"1rem"} 
       >
         <Input
           name={"email"}
