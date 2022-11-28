@@ -12,6 +12,7 @@ import {
   Th,
   Thead,
   Tr,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
@@ -20,6 +21,11 @@ import { Pagination } from "../../components/Pagination/index";
 import { Sidebar } from "../../components/Sidebar/index";
 
 export default function UserList() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true
+  })
+
   return (
     <Box>
       <Head>
@@ -61,17 +67,17 @@ export default function UserList() {
           <Table colorScheme={"whiteAlpha"}>
             <Thead>
               <Tr>
-                <Th px={"1.5rem"} color={"gray.300"} w={"2rem"}>
+                <Th px={["1rem","1rem","1.5rem"]} color={"gray.300"} w={"2rem"}>
                   <Checkbox colorScheme={"teal"} />
                 </Th>
                 <Th>Usuário</Th>
-                <Th>Data de Cadastro</Th>
+                { isWideVersion && <Th>Data de Cadastro</Th> }
                 <Th w={"2rem"}>Ações</Th>
               </Tr>
             </Thead>
             <Tbody>
               <Tr>
-                <Td px={"1.5rem"}>
+                <Td px={["1rem","1rem","1.5rem"]}>
                   <Checkbox colorScheme={"teal"} />
                 </Td>
                 <Td>
@@ -82,7 +88,7 @@ export default function UserList() {
                     </Text>
                   </Box>
                 </Td>
-                <Td>08 de novembro, 2022</Td>
+                { isWideVersion && <Td>08 de novembro, 2022</Td> }
                 <Td>
                   <Button
                     as={"a"}
@@ -91,13 +97,13 @@ export default function UserList() {
                     colorScheme={"teal"}
                     leftIcon={<Icon as={RiPencilLine} />}
                   >
-                    Editar
+                    { isWideVersion ? 'Editar' : '' }
                   </Button>
                 </Td>
               </Tr>
 
               <Tr>
-                <Td px={"1.5rem"}>
+                <Td px={["1rem","1rem","1.5rem"]}>
                   <Checkbox colorScheme={"teal"} />
                 </Td>
                 <Td>
@@ -108,7 +114,7 @@ export default function UserList() {
                     </Text>
                   </Box>
                 </Td>
-                <Td>02 de julho, 2022</Td>
+                { isWideVersion && <Td>02 de julho, 2022</Td> }
                 <Td>
                   <Button
                     as={"a"}
@@ -117,7 +123,7 @@ export default function UserList() {
                     colorScheme={"teal"}
                     leftIcon={<Icon as={RiPencilLine} />}
                   >
-                    Editar
+                    { isWideVersion ? 'Editar' : '' }
                   </Button>
                 </Td>
               </Tr>
