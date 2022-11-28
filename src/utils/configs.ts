@@ -47,8 +47,6 @@ export const options = {
         opacity: "gradient",
         gradient: {
             shade: "dark",
-            opacityFrom: 0.7,
-            opacityTo: 0.3
         }
     }
 }
