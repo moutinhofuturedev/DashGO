@@ -23,29 +23,27 @@ export default function CreateUser() {
         px={"1.5rem"}
       >
         <Sidebar />
-        <Box flex="1" borderRadius={8} bg={"gray.800"} p={"2rem"}>
+        <Box flex="1" borderRadius={8} bg={"gray.800"} p={["1.5rem","2rem"]}>
           <Heading as={"h2"} size={"lg"} fontWeight={"normal"}>
             Criar usuário
           </Heading>
 
           <Divider my={"1.5rem"} borderColor={"gray.700"} />
           <VStack spacing={"2rem"}>
-            <SimpleGrid minChildWidth={"15rem"} width={"100%"} spacing={"2rem"}>
+            <SimpleGrid minChildWidth={"15rem"} width={"100%"} spacing={["1.5rem","2rem"]}>
                 <Input name={"name"} label={"Nome completo"} />
                 <Input name={"email"} type={"email"} label={"E-mail"}/>
             </SimpleGrid>
 
-            <SimpleGrid minChildWidth={"15rem"} width={"100%"} spacing={"2rem"}>
+            <SimpleGrid minChildWidth={"15rem"} width={"100%"} spacing={["1.5rem","2rem"]}>
                 <Input name={"password"} type={"password"} label={"Senha"}/>
                 <Input name={"password_confirmation"} type={"password"} label={"Confirmação de senha"}/>
             </SimpleGrid>
           </VStack>
 
-          <Flex mt={"2rem"} justifyContent={"flex-end"}>
-            <HStack spacing={"1rem"}>
+          <Flex mt={"2rem"} justifyContent={["space-between", "flex-end"]} gap={"1rem"}>
                 <Button>Cancelar</Button>
                 <Button colorScheme={"teal"}>Salvar</Button>
-            </HStack>
           </Flex>
         </Box>
       </Flex>
