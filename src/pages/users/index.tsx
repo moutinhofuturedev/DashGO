@@ -38,7 +38,7 @@ export default function UserList() {
         w={"100%"}
         my={"1.5rem"}
         maxWidth={1480}
-        marginX={"auto"}
+        mx={"auto"}
         px={"1.5rem"}
       >
         <Sidebar />
