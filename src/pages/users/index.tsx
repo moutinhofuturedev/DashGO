@@ -15,6 +15,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Head from "next/head";
+import Link from "next/link";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header/index";
 import { Pagination } from "../../components/Pagination/index";
@@ -53,15 +54,17 @@ export default function UserList() {
               Listagem de Usuários
             </Heading>
 
-            <Button
-              as={"a"}
-              size={"sm"}
-              fontSize={"sm"}
-              colorScheme={"teal"}
-              leftIcon={<Icon as={RiAddLine} />}
-            >
-              Criar novo
-            </Button>
+            <Link href="/users/create" passHref>
+              <Button
+                as={"a"}
+                size={"sm"}
+                fontSize={"sm"}
+                colorScheme={"teal"}
+                leftIcon={<Icon as={RiAddLine} />}
+              >
+                Criar novo
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme={"whiteAlpha"}>
