@@ -3,7 +3,6 @@ import { theme } from "@chakra-ui/react"
 export const series = [
     { name: "series 1", data: [20, 30, 33, 48, 52,27, 58, 78] },
     { name: "series 2", data: [2, 50, 13, 68, 72,87, 38, 43] },
-    { name: "series 3", data: [67, 40, 53, 18, 22, 47, 28, 63] }
 ]
 
 export const options = {
