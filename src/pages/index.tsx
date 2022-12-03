@@ -1,8 +1,21 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import { Input } from "../components/Form";
+import { SubmitHandler, useForm } from "react-hook-form"
+
+type InputDataProps = {
+  email: string
+  password: string
+}
 
 export default function SignIn() {
+  const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<InputDataProps>()
+
+  const handleSignIn: SubmitHandler<InputDataProps> = async (values) => {
+    await new Promise(resolve => setTimeout(resolve, 4000))
+    console.log(values)
+  }
+   
   return (
     <Flex
       alignItems={"center"}
@@ -37,20 +50,21 @@ export default function SignIn() {
         borderRadius={"0.5rem"} 
         flexDirection={"column"}
         gap={"1rem"} 
+        onSubmit={handleSubmit(handleSignIn)}
       >
         <Input
-          name={"email"}
           type={"email"}
           label={"E-mail"}
           placeholder="Digite seu e-mail"
           _placeholder={{ color: "gray.400" }}
+          {...register("email")}
         />
         <Input
-          name={"password"}
           type={"password"}
           label={"Senha"}
           placeholder="Digite sua senha"
           _placeholder={{ color: "gray.400" }}
+          {...register("password")}
         />
 
         <Button
@@ -58,6 +72,7 @@ export default function SignIn() {
           mt={"1.5rem"}
           bg={"teal.400"}
           _hover={{ bg: "teal.600" }}
+          isLoading={isSubmitting}
         >
           Entrar
         </Button>
