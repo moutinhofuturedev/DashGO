@@ -1,17 +1,17 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import { Input } from "../components/Form";
-import { SubmitHandler, useForm } from "react-hook-form"
+import { useForm } from "react-hook-form"
 
-type InputDataProps = {
+type SignInFormData = {
   email: string
   password: string
 }
 
 export default function SignIn() {
-  const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<InputDataProps>()
+  const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<SignInFormData>()
 
-  const handleSignIn: SubmitHandler<InputDataProps> = async (values) => {
+  const handleSignIn = async (values: SignInFormData) => {
     await new Promise(resolve => setTimeout(resolve, 4000))
     console.log(values)
   }
@@ -22,7 +22,7 @@ export default function SignIn() {
       justifyContent={"center"}
       h={"100vh"}
       w={"100vw"}
-      px={"2rem"} // responsividade
+      px={"2rem"} 
     >
       <Head>
         <title>dashGo | Login</title>
