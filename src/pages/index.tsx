@@ -1,7 +1,7 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import { Input } from "../components/Form";
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form"
 
 type SignInFormData = {
   email: string
@@ -11,9 +11,8 @@ type SignInFormData = {
 export default function SignIn() {
   const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<SignInFormData>()
 
-  const handleSignIn = async (values: SignInFormData) => {
+  const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise(resolve => setTimeout(resolve, 4000))
-    console.log(values)
   }
    
   return (
@@ -57,14 +56,14 @@ export default function SignIn() {
           label={"E-mail"}
           placeholder="Digite seu e-mail"
           _placeholder={{ color: "gray.400" }}
-          {...register("email")}
+          {...register("email", { required: true })}
         />
         <Input
           type={"password"}
           label={"Senha"}
           placeholder="Digite sua senha"
           _placeholder={{ color: "gray.400" }}
-          {...register("password")}
+          {...register("password", { required: true })}
         />
 
         <Button
