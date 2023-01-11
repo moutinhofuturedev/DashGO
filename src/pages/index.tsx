@@ -1,5 +1,6 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { Input } from "../components/Form";
 import { SubmitHandler, useForm } from "react-hook-form"
 import { signInFormSchema } from "../constants/FormValidationSchema";
@@ -14,10 +15,12 @@ export default function SignIn() {
   const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<SignInFormData>({
     resolver: yupResolver(signInFormSchema)
   })
+  const router = useRouter()
 
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise(resolve => setTimeout(resolve, 4000))
-    console.log(values)
+
+    router.push("/dashboard")
   }
    
   return (
