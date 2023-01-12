@@ -1,6 +1,7 @@
 import { Box, Button, Divider, Flex, FormErrorMessage, Heading, SimpleGrid, VStack, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Input } from "../../components/Form";
 import { Header } from "../../components/Header/index";
 import { Sidebar } from '../../components/Sidebar/index';
@@ -19,11 +20,13 @@ export default function CreateUser() {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<CreateUserFormData>({
     resolver: yupResolver(userFormSchema)
   })
+  const router = useRouter()
 
   const handleCreateUser: SubmitHandler<CreateUserFormData> = async(values) => {
     await new Promise((resolve) => setTimeout(resolve, 4000))
 
     console.log(values)
+    router.push("/users")
   } 
 
   return (
@@ -91,9 +94,7 @@ export default function CreateUser() {
             <Link href="/users" passHref>
               <Button as={"a"}>Cancelar</Button>
             </Link>
-            {/* <Link href="/users" passHref> */}
               <Button colorScheme={"teal"} type="submit" isLoading={isSubmitting}>Salvar</Button>
-            {/* </Link> */}
           </Flex>
         </Box>
       </Flex>
