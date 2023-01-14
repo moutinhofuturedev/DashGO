@@ -20,12 +20,20 @@ import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header/index";
 import { Pagination } from "../../components/Pagination/index";
 import { Sidebar } from "../../components/Sidebar/index";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function UserList() {
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true
   })
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/users")
+    .then(data => data.json())
+    .then(data => console.log("Dados", data))
+  }, [])
 
   return (
     <Box>
