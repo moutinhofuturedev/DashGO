@@ -16,8 +16,7 @@ export function SidebarDrawerProvider({ children }: SidebarDrawerProviderProps) 
 
     useEffect(() => {
         disclosure.onClose()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [router.asPath])
+    }, [disclosure, router.asPath])
     return(
         <SidebarDrawerContext.Provider value={disclosure}>
             {children}
