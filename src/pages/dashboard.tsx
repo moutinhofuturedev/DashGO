@@ -31,13 +31,13 @@ export default function Dashboard() {
               <Text fontSize={"lg"} mb={"1rem"}>
                 Inscritos da semana
               </Text>
-              <Chart type="area" height={160} options={options} series={series}/>
+              {/* <Chart type="area" height={160} options={options} series={series}/> */}
             </Box>
             <Box p={["1.5rem", "2rem"]} bg={"gray.800"} borderRadius={"1.5rem"}>
               <Text fontSize={"lg"} mb={"1rem"}>
                 Taxa de abertura
               </Text>
-              <Chart type="area" height={160} options={options} series={series}/>
+              {/* <Chart type="area" height={160} options={options} series={series}/> */}
             </Box>
           </SimpleGrid>
         </Flex>
