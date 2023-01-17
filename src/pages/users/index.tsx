@@ -23,17 +23,6 @@ import { Pagination } from "../../components/Pagination/index";
 import { Sidebar } from "../../components/Sidebar/index";
 import { useQuery } from "react-query";
 
-// type UsersProps = {
-//   users: ContentProps[]
-// }
-
-// type ContentProps = {
-//   id: string
-//   name: string
-//   email: string
-//   createdAd: string
-// }
-
 export default function UserList() {
   const { data, isLoading, error } = useQuery("users", async () => {
     const response = await fetch("http://localhost:3000/api/users")
