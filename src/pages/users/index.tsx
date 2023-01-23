@@ -23,12 +23,20 @@ import { Pagination } from "../../components/Pagination/index";
 import { Sidebar } from "../../components/Sidebar/index";
 import { useQuery } from "react-query";
 
+type ResponseApi = {
+  id: string
+  name: string
+  email: string
+  createdAd: string
+}
+
 export default function UserList() {
   const { data, isLoading, error } = useQuery("users", async () => {
     const response = await fetch("http://localhost:3000/api/users")
     const data = await response.json()
+    console.log(data)
 
-    const users = data.users.map(user => {
+    const users = data.users.map((user: ResponseApi) => {
       return {
         id: user.id,
         name: user.name,
@@ -107,7 +115,7 @@ export default function UserList() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {data.map((user, index: number) => {
+                  {data.map((user: ResponseApi, index: number) => {
                     return (
                       <Tr key={index}>
                         <Td px={["1rem", "1rem", "1.5rem"]}>
