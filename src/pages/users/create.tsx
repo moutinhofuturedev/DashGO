@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Flex, FormErrorMessage, Heading, SimpleGrid, VStack, Text } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, Heading, SimpleGrid, VStack } from "@chakra-ui/react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,13 +8,7 @@ import { Sidebar } from '../../components/Sidebar/index';
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { userFormSchema } from "../../constants/FormValidationSchema";
-
-type CreateUserFormData = {
-  name: string
-  email: string
-  password: string
-  password_confirmation: string
-}
+import { CreateUserFormData } from "../../types/type";
 
 export default function CreateUser() {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<CreateUserFormData>({
@@ -25,7 +19,6 @@ export default function CreateUser() {
   const handleCreateUser: SubmitHandler<CreateUserFormData> = async(values) => {
     await new Promise((resolve) => setTimeout(resolve, 4000))
 
-    console.log(values)
     router.push("/users")
   } 
 

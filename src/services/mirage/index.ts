@@ -1,11 +1,6 @@
 import { Factory, Model, createServer } from "miragejs"
 import { faker } from '@faker-js/faker'
-
-type User = {
-    name: string
-    email: string
-    created_at: string
-}
+import { User } from "../../types/type"
 
 export function makeServer( ) {
     const server = createServer({
