@@ -22,19 +22,12 @@ import { Header } from "../../components/Header/index";
 import { Pagination } from "../../components/Pagination/index";
 import { Sidebar } from "../../components/Sidebar/index";
 import { useQuery } from "react-query";
-
-type ResponseApi = {
-  id: string
-  name: string
-  email: string
-  createdAd: string
-}
+import { ResponseApi } from "../../types/type";
 
 export default function UserList() {
   const { data, isLoading, error } = useQuery("users", async () => {
     const response = await fetch("http://localhost:3000/api/users")
     const data = await response.json()
-    console.log(data)
 
     const users = data.users.map((user: ResponseApi) => {
       return {

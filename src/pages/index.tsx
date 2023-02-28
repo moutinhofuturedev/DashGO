@@ -5,11 +5,7 @@ import { Input } from "../components/Form";
 import { SubmitHandler, useForm } from "react-hook-form"
 import { signInFormSchema } from "../constants/FormValidationSchema";
 import { yupResolver } from "@hookform/resolvers/yup"
-
-type SignInFormData = {
-  email: string
-  password: string
-}
+import { SignInFormData } from "../types/type";
 
 export default function SignIn() {
   const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<SignInFormData>({
